@@ -6,7 +6,7 @@
   <link href="https://zhugemingyi.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhugemingyi.github.io/"/>
-  <updated>2021-06-29T08:51:27.488Z</updated>
+  <updated>2021-07-05T00:31:25.070Z</updated>
   <id>https://zhugemingyi.github.io/</id>
   
   <author>
@@ -17,15 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一次尝试</title>
+    <title>my first try.</title>
     <link href="https://zhugemingyi.github.io/2021/06/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/"/>
     <id>https://zhugemingyi.github.io/2021/06/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/</id>
     <published>2021-06-29T08:51:27.000Z</published>
-    <updated>2021-06-29T08:51:27.488Z</updated>
+    <updated>2021-07-05T00:31:25.070Z</updated>
     
     
     
     
+    
+    <category term="first" scheme="https://zhugemingyi.github.io/tags/first/"/>
     
   </entry>
   
