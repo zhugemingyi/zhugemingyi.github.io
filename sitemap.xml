@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhugemingyi.github.io/guestbook/index.html</loc>
+    
+    <lastmod>2021-07-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhugemingyi.github.io/about/index.html</loc>
     
     <lastmod>2021-07-06</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://zhugemingyi.github.io/2021/07/05/python%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2021-07-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhugemingyi.github.io/guestbook/index.html</loc>
-    
-    <lastmod>2021-07-05</lastmod>
     
   </url>
   
