@@ -32,16 +32,16 @@ var _hmt = _hmt || [];
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhugemingyi.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.5.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="[TOC]">
+<meta name="description" content="二分查找">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python查找算法">
 <meta property="og:url" content="https://zhugemingyi.github.io/2021/07/07/python%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="First Try">
-<meta property="og:description" content="[TOC]">
+<meta property="og:description" content="二分查找">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhugemingyi.github.io/2021/07/07/python%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/Binary_search_into_array.png">
 <meta property="article:published_time" content="2021-07-07T02:33:55.000Z">
-<meta property="article:modified_time" content="2021-07-07T02:50:14.199Z">
+<meta property="article:modified_time" content="2021-07-07T06:30:55.366Z">
 <meta property="article:author" content="zhugemingyi">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="数据结构">
@@ -140,7 +140,7 @@ var _hmt = _hmt || [];
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">1.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -245,7 +245,7 @@ var _hmt = _hmt || [];
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-07-07 10:33:55 / 修改时间：10:50:14" itemprop="dateCreated datePublished" datetime="2021-07-07T10:33:55+08:00">2021-07-07</time>
+      <time title="创建时间：2021-07-07 10:33:55 / 修改时间：14:30:55" itemprop="dateCreated datePublished" datetime="2021-07-07T10:33:55+08:00">2021-07-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,30 +275,33 @@ var _hmt = _hmt || [];
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>[TOC]</p>
+        <ul>
+<li>二分查找</li>
+</ul>
 <span id="more"></span>
 
-<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><pre class="line-numbers language-none"><code class="language-none"># 返回 x 在 arr 中的索引，如果不存在返回 -1
-def binarySearch (arr, 0, len(arr)-1, x): 
-    # 基本判断
-    if r &gt;&#x3D; l: 
-        mid &#x3D; int(l + (r - l)&#x2F;2)
-        # 元素整好的中间位置
-        if arr[mid] &#x3D;&#x3D; x: 
-            return mid 
-        # 元素小于中间位置的元素，只需要再比较左边的元素
-        elif arr[mid] &gt; x: 
-            return binarySearch(arr, l, mid-1, x) 
-        # 元素大于中间位置的元素，只需要再比较右边的元素
-        else: 
-            return binarySearch(arr, mid+1, r, x) 
-    else: 
-        # 不存在
-        return -1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="二分查找">二分查找</span></h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 返回 x 在 arr 中的索引，如果不存在返回 -1</span>
+<span class="token keyword">def</span> <span class="token function">binarySearch</span> <span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token comment"># 基本判断</span>
+    <span class="token keyword">if</span> r <span class="token operator">>=</span> l<span class="token punctuation">:</span> 
+        mid <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>l <span class="token operator">+</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token comment"># 元素整好的中间位置</span>
+        <span class="token keyword">if</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> x<span class="token punctuation">:</span> 
+            <span class="token keyword">return</span> mid 
+        <span class="token comment"># 元素小于中间位置的元素，只需要再比较左边的元素</span>
+        <span class="token keyword">elif</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> x<span class="token punctuation">:</span> 
+            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> l<span class="token punctuation">,</span> mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span> 
+        <span class="token comment"># 元素大于中间位置的元素，只需要再比较右边的元素</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span> 
+            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> x<span class="token punctuation">)</span> 
+    <span class="token keyword">else</span><span class="token punctuation">:</span> 
+        <span class="token comment"># 不存在</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>二分搜索是一种在有序数组中查找某一特定元素的搜索算法。搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。</p>
-<p><img src="/2021/07/07/python%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/Binary_search_into_array.png" alt="Binary_search_into_array"></p>
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python-binary-search.html">https://www.runoob.com/python3/python-binary-search.html</a></p>
+
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/2021/07/07/python%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/Binary_search_into_array.png" alt="Binary_search_into_array"></p>
+<h1><span id="参考文章">参考文章</span></h1><p><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python-binary-search.html">https://www.runoob.com/python3/python-binary-search.html</a></p>
 
     </div>
 
@@ -388,7 +391,13 @@ def binarySearch (arr, 0, len(arr)-1, x):
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>
     <!-- 页面点击小红心 -->
     <script type="text/javascript" src="/js/clicklove.js"></script>
