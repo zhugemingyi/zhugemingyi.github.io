@@ -30,6 +30,7 @@
       <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
         {%- if page.type === 'tags' %}
           {%- include '_partials/page/tags.njk' -%}
+		  {%- include 'tag-color.njk' -%}
         {% elif page.type === 'categories' %}
           {%- include '_partials/page/categories.njk' -%}
         {% elif page.type === 'schedule' %}

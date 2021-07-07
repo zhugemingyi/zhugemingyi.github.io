@@ -115,3 +115,8 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+  
+lazyload:
+  enable: true
+  onlypost: false
+  loadingImg: 
